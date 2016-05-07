@@ -1,3 +1,6 @@
+// Written by:	Ajay Srivastava, Srihari Chekuri
+// Tested by: 	Ajay Srivastava, Srihari Chekuri
+
 #include "sim_landmark.h"
 #include "mathfun.h"
 #include "draw.h"

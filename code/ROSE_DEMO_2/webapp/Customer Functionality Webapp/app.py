@@ -1,3 +1,6 @@
+# Written by:	Vineet Sepaha, Brice Howard, Neil Patel
+# Tested by: 	Vineet Sepaha, Brice Howard, Neil Patel
+
 from flask import Flask, render_template, request, redirect
 import os
 from pymongo import MongoClient
@@ -38,14 +41,14 @@ def order(table, items, prices):
     print table
     oid = handle.orders.insert({"table":table,"items":items,"prices":prices});
     print oid
-    
+
     return redirect ("/"+table)
 
 @app.route("/deleteall", methods=['GET'])
 def deleteall():
     handle.orders.remove()
     return redirect ("/")
-    
+
 def tokenize(string):
     return
 

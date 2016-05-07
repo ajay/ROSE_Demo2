@@ -1,3 +1,6 @@
+# Written by:	Ajay Srivastava, Srihari Chekuri
+# Tested by: 	Ajay Srivastava, Srihari Chekuri
+
 #!/bin/bash
 echo "Applying settings for optimal chilitag detection"
 v4l2-ctl -d 1 -c auto_exposure=1

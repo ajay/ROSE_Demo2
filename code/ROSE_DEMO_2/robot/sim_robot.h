@@ -1,3 +1,6 @@
+// Written by:	Ajay Srivastava, Srihari Chekuri
+// Tested by: 	Ajay Srivastava, Srihari Chekuri
+
 #ifndef SIM_ROBOT_H
 #define SIM_ROBOT_H
 

@@ -1,3 +1,6 @@
+// Written by:	Ajay Srivastava, Srihari Chekuri
+// Tested by: 	Ajay Srivastava, Srihari Chekuri
+
 #include "highgui.h"
 #include "sim_map.h"
 

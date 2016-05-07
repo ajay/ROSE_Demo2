@@ -1,13 +1,5 @@
-/* Written by Neil Patel
-
-This script reads from the database "rosedb" and prints the state and speed data contained within it, using a fixed reading interval of 10 ms.
-It assumes that state and speed data are stored in two separate collections, named "state" and "speed",
-with the following schema for each document in these collections:
-"State" collection: _id | state
-where "state" is the actual state of the robot.
-"Speed" collection: _id | speed
-where "speed" is the current robot speed ranging from -1 to 1.
-*/
+// Written by:	Cedric Blake, Jon Cheng
+// Tested by: 	Cedric Blake, Jon Cheng
 
 #include <iostream>
 
@@ -45,18 +37,18 @@ int main(int, char**) {
     bsoncxx::builder::stream::document stateDoc2;
     bsoncxx::builder::stream::document speedDoc2;
     stateDoc << "state" << "FORWARDS";  //"state" and "speed" collections get two documents each
-    stateDoc2 << "state" << "BACKWARDS"; 
+    stateDoc2 << "state" << "BACKWARDS";
     stateColl.insert_one(stateDoc.view());
     stateColl.insert_one(stateDoc2.view());
     speedDoc << "speed" << "1.0";
-    speedDoc2 << "speed" << "0.0"; 
+    speedDoc2 << "speed" << "0.0";
     speedColl.insert_one(speedDoc.view());
     speedColl.insert_one(speedDoc2.view());
 
     //Step 2: Read the database contents.
     int numIterRem = 3;
 
-    // Query for all the documents in the "state" and "speed" collections 3 times, spacing each iteration by 10 ms.  
+    // Query for all the documents in the "state" and "speed" collections 3 times, spacing each iteration by 10 ms.
     std::cout << "DATABASE CONTENTS BEFORE:" << std:: endl;
     while (numIterRem > 0) {
         // @begin: cpp-query::cout << "Now printing contents of 'state' collection: " << std:: endl;
@@ -76,15 +68,15 @@ int main(int, char**) {
     //Step 3: Write more data to the database (1 addtl document for each collection) for further reading testing.
     bsoncxx::builder::stream::document stateDoc3;
     bsoncxx::builder::stream::document speedDoc3;
-    stateDoc3 << "state" << "RIGHT"; 
+    stateDoc3 << "state" << "RIGHT";
     stateColl.insert_one(stateDoc3.view());
-    speedDoc3 << "speed" << "-1.0"; 
+    speedDoc3 << "speed" << "-1.0";
     speedColl.insert_one(speedDoc3.view());
 
     //Step 4: Query again for all documents in both collections 3 times with spacing of 10 ms between iterations.
     numIterRem = 3; //reset iteration count
     auto cursor = db["state"].find({});
-    
+
     std::cout << "DATABASE CONTENTS AFTER:" << std:: endl;
     while (numIterRem > 0) {
         // @begin: cpp-query-all

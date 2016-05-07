@@ -1,3 +1,6 @@
+// Written by:	Cedric Blake, Jon Cheng
+// Tested by: 	Cedric Blake, Jon Cheng
+
 #include <bsoncxx/builder/stream/document.hpp>
 #include <bsoncxx/types.hpp>
 
@@ -49,10 +52,10 @@ int main() {
                << "41704620" << finalize;
 
 	auto cursor = collection.find();
-	for (int i = 0; i <  
-	
+	for (int i = 0; i <
+
 // We choose to move in our document here, which transfers ownership to insert_one()
-    // with this line, we insert into a collection named "restaurants". again, if the 
+    // with this line, we insert into a collection named "restaurants". again, if the
    	// collection does not exist, then it will be automatically created for you
 	//insert_one() take one parameter of type "document";
 	auto res = db["restaurants"].insert_one(std::move(restaurant_doc));

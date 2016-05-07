@@ -1,3 +1,6 @@
+// Written by:	Ajay Srivastava, Srihari Chekuri
+// Tested by: 	Ajay Srivastava, Srihari Chekuri
+
 #ifndef HEAP_H
 #define HEAP_H
 

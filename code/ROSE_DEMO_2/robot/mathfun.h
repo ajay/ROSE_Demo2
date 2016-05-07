@@ -1,3 +1,6 @@
+// Written by:	Ajay Srivastava, Srihari Chekuri
+// Tested by: 	Ajay Srivastava, Srihari Chekuri
+
 #ifndef MATHFUN_H
 #define MATHFUN_H
 

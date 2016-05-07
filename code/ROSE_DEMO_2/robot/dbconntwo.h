@@ -1,3 +1,6 @@
+// Written by:	Cedric Blake, Jon Cheng
+// Tested by: 	Cedric Blake, Jon Cheng
+
 /*code specific to recieving orders from the database (for demo 2) */
 #ifndef DBCONN_H
 #define DBCONN_H

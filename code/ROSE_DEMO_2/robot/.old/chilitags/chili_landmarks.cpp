@@ -9,7 +9,6 @@
 // #include <opencv2/core/core.hpp>
 // #include <opencv2/core/core_c.h>
 #include <opencv2/highgui/highgui.hpp>
-#include <opencv2/opencv.hpp>
 
 // General
 // #include <cmath>
@@ -33,7 +32,7 @@ void chili_landmarks::update()
 	// Paramaters for image aquisition
 	int xRes = 640;
 	int yRes = 480;
-	int cameraIndex = 0; //0;
+	int cameraIndex = 1; //0;
 
 	// Get camera feed
 	cv::VideoCapture capture(cameraIndex);
@@ -53,10 +52,10 @@ void chili_landmarks::update()
 	// char tagInfo[256];
 
 	// Window to display tracked chilitags
-	//cv::namedWindow("DisplayChilitags");
-	//static const cv::Scalar COLOR(255, 0, 255);
-	//static const int SHIFT = 16;
-  //static const float PRECISION = 1<<SHIFT;
+	cv::namedWindow("DisplayChilitags");
+	static const cv::Scalar COLOR(255, 0, 255);
+	static const int SHIFT = 16;
+	static const float PRECISION = 1<<SHIFT;
 
 	// Main loop, exiting when 'q is pressed'
 	for (int framecount = 0; 'q' != (char) cv::waitKey(1); framecount++)
@@ -78,7 +77,7 @@ void chili_landmarks::update()
 	    // std::memset(tagInfo, 0, 256);
 
 	    // Clone input image to label chilitags on & display
-		//cv::Mat outputImage = inputImage.clone();
+		cv::Mat outputImage = inputImage.clone();
 
 		for (int i=0; i<1024; i++)
 		{
@@ -92,10 +91,10 @@ void chili_landmarks::update()
 			const cv::Mat_<cv::Point2f> corners(tag.second);
 
 			// Draw outline around detected chilitag
-	/*		for (size_t i = 0; i < 4; ++i)
+			for (size_t i = 0; i < 4; ++i)
 			{
 				cv::line(outputImage, PRECISION*corners(i), PRECISION*corners((i+1)%4), COLOR, 1, CV_AA, SHIFT);
-			} */
+			}
 
 			// Calculate center based on two corner points
 			cv::Point2f center = 0.5f*(corners(0) + corners(2));
@@ -164,12 +163,12 @@ void chili_landmarks::update()
         // cv::circle(outputImage, cv::Point(320, 240), 15, (0, 0, 0));
 
         // Display chilitags window
-//        cv::imshow("DisplayChilitags", outputImage);
+        cv::imshow("DisplayChilitags", outputImage);
 	}
 
 	// Release all used resources
 	capture.release();
-	//cv::destroyWindow("DisplayChilitags");
+	cv::destroyWindow("DisplayChilitags");
 }
 
 // int main()

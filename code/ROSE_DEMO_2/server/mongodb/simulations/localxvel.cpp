@@ -1,14 +1,5 @@
-/* Written by Cedric Blake
-
-This script is used to push the displacement values of each encoder
-to the database "rosedb"
-
-currently, this script only simulates the encoder values by using
-a random number generator. the while loop breaks after 5 iterations
-
-stored within the "encoders" collection of the "rosedb" database
-
-*/
+// Written by:	Cedric Blake, Jon Cheng
+// Tested by: 	Cedric Blake, Jon Cheng
 
 #include <iostream>
 #include <stdlib.h>     /* srand, rand */
@@ -57,8 +48,8 @@ int main() {
 	//this document is used to reinitialize the position and velocity reading
 	//each time we need to restart the robot, as the current readings would
 	//now be out of date
-	bsoncxx::document::value initializer = 
-	document{} << "top left" << tl << "top right" << tr 
+	bsoncxx::document::value initializer =
+	document{} << "top left" << tl << "top right" << tr
 	<< "bottom left" << bl << "bottom right" << br << finalize;
 
 	encoders.insert_one(move(initializer));
@@ -86,8 +77,8 @@ int main() {
 
 		//update values here
 		updateVals << "$set" << open_document
-			<< "top left" << tl << "top right" << tr 
-			<< "bottom left" << bl << "bottom right" << br 
+			<< "top left" << tl << "top right" << tr
+			<< "bottom left" << bl << "bottom right" << br
 			<< close_document;
 
 		encoderVals << "top left" << open_document
@@ -106,5 +97,5 @@ int main() {
 	}
 
 	return 0;
- 
+
 }

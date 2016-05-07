@@ -1,3 +1,6 @@
+# Written by:	Vineet Sepaha, Brice Howard, Neil Patel
+# Tested by: 	Vineet Sepaha, Brice Howard, Neil Patel
+
 from flask import Flask, render_template, request, redirect, jsonify
 import os, json
 from bson import json_util
@@ -8,11 +11,11 @@ def connect():
 # the Mongo DB Database (underlined in red in the screenshots)
 # Obviously, do not store your password as plaintext in practice
     # LOCALHOST
-    
+
     # connection = MongoClient()
     # handle = connection["rosedb"]
     # return handle
-    
+
     # MONGOLAB
     connection = MongoClient("ds015878.mongolab.com", 15878)
     handle = connection["rosedb"]
@@ -43,7 +46,7 @@ def getOrders():
     orders = handle.orders.find()
     json_orders = map(order_to_json, orders)
     return jsonify(results=json_orders)
-    
+
 # Helper function to return a JSON object, given an order document from the orders collection.
 def order_to_json(order):
     return {"prices": order["prices"],

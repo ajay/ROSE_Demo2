@@ -1,3 +1,6 @@
+// Written by:	Ajay Srivastava, Cedric Blake
+// Tested by: 	Ajay Srivastava, Cedric Blake
+
 /////////////////
 // ROSE SCREEN //
 /////////////////
@@ -63,7 +66,7 @@ void loop()
 		{
 			e[0] = '\0';
 			if ((s = strrchr(buf, '[')))
-			{				
+			{
 				// CHANGE THIS TO RECEIVE STRINGS OR WHATEVER YOU WANT
 				sscanf(s, "[%d]\n", &message);
 			}

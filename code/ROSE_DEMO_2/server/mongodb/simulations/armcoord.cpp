@@ -1,10 +1,5 @@
-/* Written By: Cedric Blake
-
-this script currently simulates storing information of the arm's positioning 
-from variables into the database
-
-stored withing the collection "arm positioning" of the "rosedb" database
-*/
+// Written by:	Cedric Blake, Jon Cheng
+// Tested by: 	Cedric Blake, Jon Cheng
 
 #include <iostream>
 #include <stdlib.h>     /* srand, rand */
@@ -52,7 +47,7 @@ int main() {
 
 	armPos.delete_many({});
 
-	bsoncxx::document::value initializer = 
+	bsoncxx::document::value initializer =
 	document{} << "X" << cordX << "Y" << cordY
 	<< "Z" << cordZ << "Theta" << cordTheta << finalize;
 

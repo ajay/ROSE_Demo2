@@ -1,3 +1,6 @@
+# Written by:	Cedric Blake, Jon Cheng
+# Tested by: 	Cedric Blake, Jon Cheng
+
 from pymongo import MongoClient
 from datetime import datetime
 #look into this library later:

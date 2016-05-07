@@ -1,3 +1,6 @@
+// Written by:	Cedric Blake, Jon Cheng
+// Tested by: 	Cedric Blake, Jon Cheng
+
 #include <iostream>
 
 #include <bsoncxx/builder/stream/document.hpp>
@@ -21,4 +24,4 @@ int main(int, char**) {
     for (auto&& doc : cursor) {
         std::cout << bsoncxx::to_json(doc) << std::endl;
     }
-} 
+}

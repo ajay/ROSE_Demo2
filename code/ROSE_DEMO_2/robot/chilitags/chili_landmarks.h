@@ -1,3 +1,6 @@
+// Written by:	Ajay Srivastava, Srihari Chekuri
+// Tested by: 	Ajay Srivastava, Srihari Chekuri
+
 #ifndef CHILI_LANDMARKS_H
 #define CHILI_LANDMARKS_H
 

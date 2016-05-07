@@ -1,3 +1,6 @@
+# Written by:	Ajay Srivastava, Srihari Chekuri
+# Tested by: 	Ajay Srivastava, Srihari Chekuri
+
 CPP = g++
 CPPFLAGS = `pkg-config --cflags opencv` -std=c++11 -O3 -g -Wall -Wno-unused-variable
 COMPILE = $(CPP) $(CPPFLAGS)

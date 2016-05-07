@@ -1,3 +1,6 @@
+# Written by:	Cedric Blake, Jon Cheng
+# Tested by: 	Cedric Blake, Jon Cheng
+
 #the following code connects to the remote server with the ip address "192.168.1.2"
 #and prints out the documents of a collection in the database
 from pymongo import MongoClient

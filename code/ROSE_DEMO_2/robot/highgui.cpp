@@ -1,3 +1,6 @@
+// Written by:	Ajay Srivastava, Srihari Chekuri
+// Tested by: 	Ajay Srivastava, Srihari Chekuri
+
 #include <cmath>
 #include <cstdint>
 #include <opencv2/highgui/highgui.hpp>
